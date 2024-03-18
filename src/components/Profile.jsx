@@ -1,33 +1,35 @@
-// import React from 'react';
-import styles from './Profile.module.css';
+ import css from "./Profile.module.css"
 
 const Profile = ({ name, tag, location, image, stats }) => {
-  const { followers, views, likes } = stats;
-
   return (
-    <div className={styles.profile}>
-      <div className={styles.profileInfo}>
-        <img src={image} alt="User avatar" />
-        <p>{name}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
-      </div>
-
-      <ul className={styles.statsList}>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
-      </ul>
+<div  className={css.profile}>
+    <div className={css.description}>
+        <img
+            src={image}
+            alt="User avatar"
+            className={css.avatar}
+        />
+        <p className={css.name}>{name}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
     </div>
+
+    <ul className={css.stats}>
+        <li className={css.statsItem}>
+            <span className={css.label}>Followers</span>
+            <span className={css.value}>{stats.followers}</span>
+        </li>
+        <li className={css.statsItem}>
+            <span className={css.label}>Views</span>
+            <span className={css.value}>{stats.views}</span>
+        </li>
+        <li className={css.statsItem}>
+            <span className={css.label}>Likes</span>
+            <span className={css.value}>{stats.likes}</span>
+        </li>
+    </ul>
+</div>
+
   );
 };
 
